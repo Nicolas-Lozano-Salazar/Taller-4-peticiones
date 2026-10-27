@@ -1,0 +1,8 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+class ApiConfig {
+  static String get baseUrl =>
+      dotenv.env['API_BASE_URL'] ?? 'https://api-colombia.com/api/v1';
+
+  static String endpoint(String path) => '$baseUrl/$path';
+}
