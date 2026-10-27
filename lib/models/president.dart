@@ -27,7 +27,9 @@ class President {
     final city = json['city'];
     return President(
       id: json['id'] is int ? json['id'] as int : int.tryParse('${json['id']}') ?? 0,
-      image: json['image']?.toString(),
+      image: json['image'] != null
+          ? Uri.encodeFull(json['image'].toString())
+          : null,
       name: json['name']?.toString() ?? '',
       lastName: json['lastName']?.toString(),
       startPeriodDate: json['startPeriodDate']?.toString(),

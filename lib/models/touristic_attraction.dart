@@ -26,7 +26,9 @@ class TouristicAttraction {
       id: json['id'] is int ? json['id'] as int : int.tryParse('${json['id']}') ?? 0,
       name: json['name']?.toString() ?? '',
       description: json['description']?.toString(),
-      images: imgs is List ? imgs.map((e) => e.toString()).toList() : const [],
+      images: imgs is List
+          ? imgs.map((e) => Uri.encodeFull(e.toString())).toList()
+          : const [],
       latitude: json['latitude']?.toString(),
       longitude: json['longitude']?.toString(),
       cityId: json['cityId'] is int ? json['cityId'] as int : int.tryParse('${json['cityId']}'),
