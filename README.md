@@ -69,6 +69,20 @@ Cada pantalla de listado y detalle maneja tres estados:
 - Éxito (render de datos con `ListView.builder`)
 - Error (mensaje + botón de reintento cuando aplica)
 
+## Capturas de la aplicación
+
+### Dashboard (Home)
+![Dashboard](screenshots/dashboard.png)
+Pantalla principal con cards para cada endpoint. Al tocar una card se navega al listado correspondiente.
+
+### Listado (Departamentos)
+![Listado](screenshots/listado.png)
+Petición GET a la API, render con ListView.builder. Estados de carga, éxito y error (mensaje + reintentar).
+
+### Detalle (Departamento)
+![Detalle](screenshots/detalle.png)
+Pantalla de detalle con información completa del registro seleccionado, navegación con go_router y paso de parámetros (id).
+
 ## Ejecución
 
 ```bash
