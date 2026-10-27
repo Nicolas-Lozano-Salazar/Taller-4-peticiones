@@ -24,7 +24,9 @@ class TypicalDish {
       name: json['name']?.toString() ?? '',
       description: json['description']?.toString(),
       ingredients: json['ingredients']?.toString(),
-      imageUrl: json['imageUrl']?.toString(),
+      imageUrl: json['imageUrl'] != null
+          ? Uri.encodeFull(json['imageUrl'].toString())
+          : null,
       departmentId: json['departmentId'] is int
           ? json['departmentId'] as int
           : int.tryParse('${json['departmentId']}'),
